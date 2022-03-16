@@ -38,6 +38,10 @@
 
 			<?php 
 				} //end while
+
+			//next & previous buttons
+			relax_pagination();
+
 			}else{ ?>
 
 				<h2>No Posts to show</h2>

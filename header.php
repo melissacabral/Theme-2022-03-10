@@ -20,15 +20,14 @@
 				<h2><?php bloginfo( 'description' ); ?></h2>
 			</div>
 			<div class="navigation">
-				<nav class="main-menu">
-					<ul>
-						<?php 
-						wp_list_pages( array(
-							'title_li' => '',
-						) ); 
-						?>
-					</ul>
-				</nav>
+				<?php 
+				//display one registered menu area
+				wp_nav_menu( array(
+					'theme_location' 	=> 'main_navigation', //registered in functions.php
+					'container'				=> 'nav', //div or nav or false
+					'container_class' => 'main-navigation', // <nav class="main-navigation">
+					'fallback_cb' 		=> false,
+				) ); ?>
 			</div>
 			<div class="utilities">
 				<!-- Utility menu will go here -->

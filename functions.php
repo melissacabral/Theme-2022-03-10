@@ -19,16 +19,15 @@ function relax_setup(){
 	add_theme_support('post-formats', array('gallery', 'image', 'video', 'audio', 
 										'link', 'quote', 'aside', 'chat', 'status'));
 
-	//adds custom body background
-	add_theme_support( 'custom-background' );
-
-	add_theme_support( 'custom-header' );
-
 	add_theme_support( 'custom-logo', array(
 		'width' => 300,
 		'height' => 300,
 		'flex-height' => true,
 	) );
+	//adds custom body background
+	add_theme_support( 'custom-background' );
+
+	add_theme_support( 'custom-header' );
 }
 
 /**
@@ -86,5 +85,43 @@ function relax_dotdotdot(){
 	return '&hellip; <a href="' . get_the_permalink() . '" class="button">Keep Reading</a>';
 }
 
+/**
+ * Add support for menu areas
+ */
+add_action( 'init', 'relax_menus' );
+function relax_menus(){
+	register_nav_menus(array(
+		'main_navigation' => 'Main Navigation',
+		'footer_menu' => 'Footer Menu',
+	));
+}
 
+add_action( 'init', 'relax_add_excerpts' );
+function relax_add_excerpts() {
+    add_post_type_support( 'page', 'excerpt' );
+}
+
+/**
+ * Custom Pagination Function
+ * put this after the loop in your templates that need pagination
+ */
+function relax_pagination(){
+	//@TODO: Hide the empty div if pagination is not needed (tried is_paged())
+		echo '<div class="pagination">';
+		//check if this screen is singular or archive
+		if( is_singular() ){
+			//single post or page
+			previous_post_link( '%link', '&larr; %title' );
+			next_post_link( '%link', '%title &rarr;' );
+		}elseif( wp_is_mobile() ){
+			//archive on mobile - next/previous page buttons
+			previous_posts_link('&larr; Previous Page');
+			next_posts_link('Next Page &rarr;');
+		}else{
+			//archive on desktop - numbered pagination
+			the_posts_pagination();
+		}
+		echo '</div>';
+	
+}
 //no close php
