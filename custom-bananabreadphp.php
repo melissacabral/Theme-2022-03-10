@@ -1,11 +1,11 @@
 <?php 
 /*
-Template Name: Custom Page with Sidebar
+Template Name: Bananabread
 */
 
 get_header(); //requires header.php ?>
 		<main class="content">
-
+			BANANABREAD
 			<?php //The Loop
 			if( have_posts() ){	
 				while( have_posts() ){	
@@ -37,5 +37,5 @@ get_header(); //requires header.php ?>
 		</main>
 		<!-- end .content -->
 			
-<?php get_sidebar('page');  //require sidebar-page.php ?>
+<?php get_sidebar('banana');  //require sidebar-banana.php ?>
 <?php get_footer();  //require footer.php ?>

@@ -1,9 +1,7 @@
 		<footer class="footer">
 			<?php 
-			wp_nav_menu(array(
-				'theme_location' 	=> 'footer_menu',
-				'fallback_cb' 		=> false,
-			)); ?>
+			//display a widget area
+			dynamic_sidebar( 'footer_area' ); ?>
 		</footer>
 	</div>
 

@@ -124,4 +124,39 @@ function relax_pagination(){
 		echo '</div>';
 	
 }
+
+
+/**
+ * Set up Widget Areas (Dynamic Sidebars)
+ */
+add_action('widgets_init', 'relax_widget_areas');
+function relax_widget_areas(){
+	register_sidebar( array(
+		'name' 			=> 'Blog Sidebar',
+		'id' 			=> 'blog_sidebar',
+		'description' 	=> 'Stuff for the blog and archive pages',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget'	=> '</div>',
+		'before_title'	=> '<h2 class="widget-title">',
+		'after_title'	=> '</h2>',
+	) );
+	register_sidebar( array(
+		'name' 			=> 'Page Sidebar',
+		'id' 			=> 'page_sidebar',
+		'description' 	=> 'Stuff for the pages that have sidebars (custom template)',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget'	=> '</div>',
+		'before_title'	=> '<h2 class="widget-title">',
+		'after_title'	=> '</h2>',
+	) );
+	register_sidebar( array(
+		'name' 			=> 'Footer Area',
+		'id' 			=> 'footer_area',
+		'description' 	=> 'Appears at the bottom of every screen',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget'	=> '</div>',
+		'before_title'	=> '<h2 class="widget-title">',
+		'after_title'	=> '</h2>',
+	) );
+}
 //no close php

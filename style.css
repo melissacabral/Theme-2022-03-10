@@ -964,3 +964,9 @@ a img.aligncenter {
 .page-template-custom-page-with-sidebar{
     background-color: tomato;
 }
+
+
+.header-first{
+    min-height: 90vh;
+    background-color: orchid;
+}

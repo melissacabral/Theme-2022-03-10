@@ -1,4 +1,4 @@
-<?php get_header(); //requires header.php ?>
+<?php get_header('first'); //requires header-first.php ?>
 		<main class="content">
 			<?php //The Loop
 			if( have_posts() ){	
