@@ -21,6 +21,7 @@
 						the_excerpt();
 					}else{
 						the_content(); 
+						wp_link_pages();
 					} ?>
 				</div>
 				<div class="postmeta">

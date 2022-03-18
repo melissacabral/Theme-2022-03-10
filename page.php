@@ -15,6 +15,7 @@
 				</h2>
 				<div class="entry-content">
 					<?php the_content(); ?>
+					<?php wp_link_pages(); ?>
 				</div>
 			</div>
 			<!-- end .post -->

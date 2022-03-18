@@ -28,6 +28,9 @@ function relax_setup(){
 	add_theme_support( 'custom-background' );
 
 	add_theme_support( 'custom-header' );
+	//recommended by theme check
+	add_theme_support( "wp-block-styles" );
+	add_theme_support( "responsive-embeds" );
 }
 
 /**

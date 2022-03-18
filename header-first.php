@@ -1,16 +1,17 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html <?php language_attributes(); ?>>
 <head>
   <?php wp_head(); //HOOK. required for the admin bar and plugins to work ?>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body <?php body_class() ?>>
+	<?php wp_body_open(); ?>
 	<div class="site">
 		<header class="header header-first">
 			<div class="branding">			
 				<h1 class="site-title">
-					<a href="<?php echo home_url(); ?>">
+					<a href="<?php echo esc_url( home_url() ); ?>">
 						<?php bloginfo( 'name' ); ?>
 					</a>
 				</h1>
