@@ -730,6 +730,10 @@ span.current.page-numbers{
 .comments ol{
     list-style-type: none;
 }
+.bypostauthor{
+    background-color: khaki;
+    padding: .5em;
+}
 /* 
 == CSS Grid 
 check for browsers that support grid 
